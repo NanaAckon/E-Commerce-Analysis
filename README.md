@@ -1,4 +1,3 @@
-
 # E-Commerce Store Data Analysis Project
 
 ## **Project Overview**
@@ -26,6 +25,79 @@ The dataset consists of historical transaction records from the e-commerce store
   - Used GitHub-friendly Markdown for this project report.
 
 ---
+
+## **Data Dictionary**
+Here is a summary of all the columns in the dataset and their meanings:
+
+| **Column Name**                   | **Description**                                                                                  |
+|------------------------------------|--------------------------------------------------------------------------------------------------|
+| `Customer_ID`                     | A unique identifier for each customer.                                                          |
+| `Age`                             | The age of the customer.                                                                         |
+| `Gender`                          | The gender of the customer.                                                                      |
+| `Income_Level`                    | The income level of the customer (e.g., Low, Medium, High).                                      |
+| `Marital_Status`                  | The marital status of the customer (e.g., Single, Married).                                      |
+| `Education_Level`                 | The education level of the customer (e.g., Bachelor's, Master's).                               |
+| `Occupation`                      | The profession of the customer.                                                                 |
+| `Location`                        | The geographical location of the customer.                                                      |
+| `Purchase_Category`               | The category of the product purchased by the customer.                                           |
+| `Purchase_Amount`                 | The total amount spent on the purchase.                                                         |
+| `Frequency_of_Purchase`           | How often the customer makes purchases.                                                         |
+| `Purchase_Channel`                | The channel through which the purchase was made (e.g., Online, In-Store).                       |
+| `Brand_Loyalty`                   | A measure of the customer’s loyalty to a specific brand.                                         |
+| `Product_Rating`                  | Rating given by the customer to the purchased product (1–5 scale).                              |
+| `Social_Media_Influence`          | The influence of social media on the customer’s purchase decision (e.g., High, Medium, Low).     |
+| `Discount_Sensitivity`            | The customer's sensitivity to discounts (e.g., Yes, No).                                        |
+| `Return_Rate`                     | The rate at which the customer returns purchased products.                                       |
+| `Customer_Satisfaction`           | The customer’s satisfaction score with the purchase (1–10 scale).                               |
+| `Time_of_Purchase`                | The timestamp or date when the purchase was made.                                               |
+| `Discount_Used`                   | Whether a discount was used for the purchase (Yes/No).                                          |
+| `Shipping_Preference`             | The customer’s preference for shipping (e.g., Standard, Express).                               |
+| `Time_to_Decision`                | The time taken by the customer to decide on a purchase.                                          |
+| **New Columns Created**            |                                                                                                  |
+| `Age_Group`                       | Groups customers into "Young" (below 35) and "Old" (above 36).                                  |
+| `Day_of_Purchase`                 | Extracted the day of the week from the `Time_of_Purchase`.                                       |
+| `Return_Behavior`                 | Groups customers into "No Returns", "Low Returns", and "Frequent Returns".                      |
+| `Rating_Groups`                   | Groups products into "Low Rating (<3)", "Medium Rating (3–4)", and "High Rating (>4)".          |
+
+---
+
+## **Data Cleaning**
+To ensure accurate and insightful analysis, several data cleaning steps were performed:
+1. **Handling Missing Values**:
+   - There were no missing values
+
+2. **Standardizing Data Formats**:
+   - Reformatted inconsistent data entries for columns like `Time_of_Purchase`,`Purchase Amount` and `Income_Level` to ensure consistency.
+
+3. **Removing Duplicates**:
+   - Eliminated duplicate entries in the dataset for accurate aggregation and analysis.
+
+4. **Creating New Columns**:
+   - Added calculated columns to group or segment data:
+     - **Age Group**:
+       ```excel
+       =IF(Age<35, "Young", "Old")
+       ```
+     - **Return Behavior**:
+       ```excel
+       =IF(Return_Rate=0, "No Returns", IF(Return_Rate<0.2, "Low Returns", "Frequent Returns"))
+       ```
+     - **Discount Sensitivity**:
+       ```excel
+       =IF(Discount_Used="Yes", "Sensitive", "Not Sensitive")
+       ```
+     - **Day of the Week**:
+       ```excel
+       =TEXT(Time_of_Purchase, "dddd")
+       ```
+
+---
+
+## **Deliverables**
+1. **Interactive Dashboard**:
+   - Includes all visualizations (spending trends, return rates, discounts, etc.).
+2. **Documentation**:
+   - Comprehensive analysis steps, findings, and recommendations (as listed above).
 
 
 
