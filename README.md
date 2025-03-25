@@ -70,7 +70,7 @@ To ensure accurate and insightful analysis, several data cleaning steps were per
    - Reformatted inconsistent data entries for columns like `Time_of_Purchase`,`Purchase Amount` and `Income_Level` to ensure consistency.
 
 3. **Removing Duplicates**:
-   - Eliminated duplicate entries in the dataset for accurate aggregation and analysis.
+   - There we no duplicate rows or columns.
 
 4. **Creating New Columns**:
    - Added calculated columns to group or segment data:
