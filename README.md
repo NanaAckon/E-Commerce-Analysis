@@ -76,7 +76,7 @@ To ensure accurate and insightful analysis, several data cleaning steps were per
    - Added calculated columns to group or segment data:
      - **Age Group**:
        ```excel
-       =IF(Age<35, "Young", "Old")
+       =IF(Age<=35, "Young", "Old")
        ```
      - **Return Behavior**:
        ```excel
@@ -108,16 +108,17 @@ To ensure accurate and insightful analysis, several data cleaning steps were per
 #### **Steps Taken**
 - Grouped customers into two age groups: **Young (below 35 years)** and **Old (above 36 years)** using the formula:
   ```excel
-  =IF(Age<35, "Young", "Old")
+  =IF(Age<=35, "Young", "Old")
   ```
 - Compared spending, product category preferences, and income contributions using Pivot Tables.
 - Visualized findings with bar charts comparing spending, preferences, and income levels.
 
-![Screenshot 2025-03-24 213605](https://github.com/user-attachments/assets/be6c8f23-93f3-4397-9725-6ab90d05685f)
+![image](https://github.com/user-attachments/assets/30da20b4-fcf5-4523-8c99-aeda5fc33ab7)
+
 
 
 #### **Findings**
-- **Spending**: Old customers spent more ($7,292.13) than Young customers ($6,550.28).
+- **Spending**: young customers spent more ($147,566.01) than old customers($127,497.87) with the difference of $20,068.1 between them
 - **Product Categories**: Electronics was the most popular category for both groups.
 - **Income Level**: High-income customers drove most of the spending for both age groups.
 
